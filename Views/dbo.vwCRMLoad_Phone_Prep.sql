@@ -1,0 +1,9 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE VIEW [dbo].[vwCRMLoad_Phone_Prep] AS
+SELECT p.* FROM dbo.Phone p
+INNER JOIN dbo.[CRMLoad_Contact_ProcessLoad_Criteria] c 
+ON [c].[SSB_CRMSYSTEM_CONTACT_ID] = [p].[SSB_CRMSYSTEM_CONTACT_ID]
+GO
